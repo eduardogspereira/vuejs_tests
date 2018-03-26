@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Maps | Shelly</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<div id="app">
+    <h1>Click on the Button!</h1>
+    <h2>Results above 0.5 you win. Result less then 0.5 we win!</h2>
+    <p>{{ message }}</p>
+    <p>
+        <i>{{ result }}</i>
+    </p>
+    <button v-on:click="vm.message = Math.random(); vm.result = areuluck(vm.message)">Be my guest. Test your luck!</buton>
+
+</div>
+
+<body>
+    <div>
+    </div>
+    <script>
+        const areuluck = value => value > 0.5 ? 'You won it, you mother fucka!' : 'House Wins!!!'
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Click on it!',
+                result: 'House Wins!!!'
+            }
+        })
+    </script>
+</body>
+
+</html>
